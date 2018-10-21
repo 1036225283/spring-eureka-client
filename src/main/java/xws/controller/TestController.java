@@ -1,6 +1,7 @@
 package xws.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +21,12 @@ public class TestController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Value("${spring.application.name}")
+    private String applicationName;
+
     @RequestMapping(value = "/user/register", method = RequestMethod.GET)
     public List<ServiceInstance> serviceInstancesByApplicationName() {
-        return this.discoveryClient.getInstances("a-bootiful-client");
+        return this.discoveryClient.getInstances(applicationName);
     }
 
 }

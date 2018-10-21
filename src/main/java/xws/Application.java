@@ -9,6 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 
 
+//下面的注解激活Eureka中的DiscoveryClient实现自动化配置
 @EnableDiscoveryClient
 @SpringBootApplication
 public class Application {
