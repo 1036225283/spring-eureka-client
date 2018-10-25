@@ -11,7 +11,7 @@ eureka:
 spring:
     datasource:
         name: test
-        url: jdbc:mysql://127.0.0.1:3306/xws?zeroDateTimeBehavior=convertToNull&Unicode=true&amp;characterEncoding=utf8
+        url: jdbc:mysql://127.0.0.1:3306/xws?zeroDateTimeBehavior=convertToNull&useUnicode=true&characterEncoding=utf8
         username: root
         password: root
         # 使用druid数据源
